@@ -12,7 +12,10 @@ p.271 [리스트 11.6] 약관 동의 화면
 	<p>약관 내용</p>
 	<form action="./app/register/step2" method="post">
 		<input type="checkbox" name="agree" value="true">약관 동의
+		<p>
 		<button type="submit">다음 단계</button>
+		</p> 
+		<button type="button" onclick="location.href='./app/main'">홈 화면 </button>
 	</form>
 </body>
 </html>

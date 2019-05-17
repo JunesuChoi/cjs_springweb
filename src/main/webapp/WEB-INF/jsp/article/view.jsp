@@ -8,7 +8,7 @@
 <body>
 	<h2>글 보기</h2>
 	<p>
-		<a href="./app/article/list">글 목록</a>
+		<a href="./app/article/list">글 목록</a> <a href="./app/main">홈 화면</a>
 	</p>
 	<hr />
 	<p>

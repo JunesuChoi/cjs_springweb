@@ -23,6 +23,7 @@ p.277 [리스트 11.9] 회원가입 화면
 			비밀번호 확인:<br> <input type="password" name="confirmPassword">
 		</p>
 		<button type="submit">가입 완료</button>
+		<button type="button" onclick="location.href='./app/main'">가입 취소 </button>
 	</form>
 </body>
 </html>

@@ -66,6 +66,9 @@ public class Article {
 		this.udate = udate;
 	}
 
+	/**
+	 * \n를 <br/> 로 바꾼다.
+	 */
 	public String getContentHtml() {
 		if (content != null)
 			return content.replace("\n", "<br/>");
