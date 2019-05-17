@@ -1,20 +1,48 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
-<!-- 
-p.291 [리스트 11.18] main 화면
--->
+
 <html>
 <head>
+<style>
+.tb { border-collapse:collapse;}
+.tb th, .tb td {width:800px; height:100px; margin: auto;
+					background-image: url("http://mehdishokrany.persiangig.com/KHaterehjoon/2/baran.GIF");
+					background-color: #000000;
+					text-align: center;
+					border:1px solid black;}
+.tb td {wedth:800px; height:600px; 
+		background-image: url("https://data.whicdn.com/images/293932140/original.gif");
+		background-color: #000000;
+		}
+</style>
 <base href="${pageContext.request.contextPath }/" />
 <title>메인</title>
 </head>
 <body>
-	<p>환영합니다.</p>
-	<p>
-		<a href="./app/register/step1">[회원 가입]</a>
-	</p>
-	<p>
-		<a href="./app/members">[회원 목록]</a>
-	</p>
+
+<table class="tb">
+<tr>
+<th><header><h1><font size="10em" color ="White">
+	메뉴</font></h1></header></th>
+	</tr>
+	<tr>
+<td>
+	<c:choose>
+		<c:when test="${!empty sessionScope.MEMBER }">
+memberId: ${MEMBER.memberId }, email: ${MEMBER.email }, name:
+				${MEMBER.name }
+	<p><a href="./app/logout"><font size="10em" color ="white">[로그아웃]</font></a></p>
+		</c:when>
+		<c:otherwise>
+		<p><a href="./app/loginForm"><font size="10em" color ="white">[로그인]</font></a></p>
+		<p><a href="./app/register/step1"><font size="10em" color ="white">[회원가입]</font></a></p>
+		</c:otherwise>
+	</c:choose>
+		<p><a href="./app/members"><font size="10em" color ="white">[회원목록]</font></a></p>
+		<a href="./app/article/list"><font size="10em" color ="white">[게시판]</font></a>
+	 </td>
+	</tr>
+	</table>
 </body>
 </head>
 </html>
