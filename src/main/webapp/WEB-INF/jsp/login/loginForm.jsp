@@ -7,10 +7,11 @@
 <title>로그인</title>
 </head>
 <body>
-	<form action="./app/login" method="post">
+	
 		<c:if test="${param.mode=='FAILURE' }">
 			<p style="color: red;">이메일이 없거나 비밀번호가 틀립니다.</p>
 		</c:if>
+		<form action="./app/login" method="post">
 		<p>
 			<label>이메일 :</label><br /> <input type="email" name="email"
 				value="${param.email }" required />
@@ -20,6 +21,7 @@
 		</p>
 		<p>
 			<button type="submit">로그인</button>
+			<button type="button" onclick="location.href='./app/main'">홈 화면 </button>
 		</p>
 	</form>
 </body>

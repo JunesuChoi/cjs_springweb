@@ -16,7 +16,7 @@
 		}
 </style>
 <base href="${pageContext.request.contextPath }/" />
-<title>메인</title>
+<title>메 - 어서오십시오 -  인</title>
 </head>
 <body>
 
@@ -29,8 +29,8 @@
 <td>
 	<c:choose>
 		<c:when test="${!empty sessionScope.MEMBER }">
-memberId: ${MEMBER.memberId }, email: ${MEMBER.email }, name:
-				${MEMBER.name }
+		<p><font color = "white">memberId: ${MEMBER.memberId }, email: ${MEMBER.email }, name:
+				${MEMBER.name }</font></p>
 	<p><a href="./app/logout"><font size="10em" color ="white">[로그아웃]</font></a></p>
 		</c:when>
 		<c:otherwise>
@@ -38,6 +38,8 @@ memberId: ${MEMBER.memberId }, email: ${MEMBER.email }, name:
 		<p><a href="./app/register/step1"><font size="10em" color ="white">[회원가입]</font></a></p>
 		</c:otherwise>
 	</c:choose>
+		<p><a href="./app/member/changePwdForm"><font size="10em" color ="white">[비밀번호 변경]</font></a></p>
+		<p><a href="./app/member/memberInfo"><font size="10em" color ="white">[사용자 정보]</font></a></p>
 		<p><a href="./app/members"><font size="10em" color ="white">[회원목록]</font></a></p>
 		<a href="./app/article/list"><font size="10em" color ="white">[게시판]</font></a>
 	 </td>

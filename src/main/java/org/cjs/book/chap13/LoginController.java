@@ -14,6 +14,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * p.356 [리스트 13.6] 로그인 컨트롤러 수정
+ * 
+ * @author CJS
+ */
 @Controller
 public class LoginController {
 
