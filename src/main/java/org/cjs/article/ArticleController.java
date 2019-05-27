@@ -3,7 +3,7 @@ package org.cjs.article;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
-
+import javax.swing.JOptionPane;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.cjs.book.chap11.Member;
@@ -70,14 +70,47 @@ public class ArticleController {
 		articleDao.addArticle(article);
 		return "redirect:/app/article/list";
 	}
-	// 글 수정
+	
+	/**
+	 *  글 수정 폼
+	 */
+	@GetMapping("/article/modifyForm")
+	public void articleupdateForm(Article article,HttpSession session,
+			@RequestParam("articleId") String articleId,
+			@SessionAttribute("MEMBER") Member member, Model model) {
+		article = articleDao.getArticle(articleId);
+		article.getUserId();
+		model.addAttribute("article", article);
+	}
+	/**
+	 *  글 수정 
+	 */
 	@PostMapping("/article/modify")
-	public String articleModify(Article article,
+	public String articleUpdate(Article article,HttpSession session,
 			@SessionAttribute("MEMBER") Member member) {
-		article.setUserId(member.getMemberId());
-		article.setName(member.getName());
-		articleDao.updateArticle(article);
+		article.setArticleId(article.articleId);
+		articleDao.modifyArticle(article);
+		JOptionPane.showMessageDialog(null, "수정 완료");
 		return "redirect:/app/article/list";
 	}
 	
+	/**
+	 * 글 삭제
+	 */
+	@PostMapping("/article/delete")
+	public String articledelete(Article article,HttpSession session,
+			@RequestParam("articleId") String articleId,
+			@SessionAttribute("MEMBER") Member member) {
+		article.setUserId(member.getMemberId());
+		article.setName(member.getName());
+		article = articleDao.getArticle(articleId);
+		if(!member.getMemberId().equals(article.getUserId())){
+			JOptionPane.showMessageDialog(null, "본인이 작성한 게시글만 삭제가능합니다.", "삭제 실패", JOptionPane.ERROR_MESSAGE);
+			return "redirect:/app/article/view?articleId="+articleId;
+		} else {
+			articleDao.deleteArticle(article);
+		JOptionPane.showMessageDialog(null, "삭제 완료");
+		return "redirect:/app/article/list";
+		}
+	}
 }

@@ -6,7 +6,6 @@ public class Member {
 	String password; // 비밀번호
 	String name; // 이름
 	String cdate; // 가입일
-
 	/**
 	 * Default Constructor
 	 */

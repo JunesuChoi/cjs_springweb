@@ -20,10 +20,13 @@ public class ArticleDao {
 
 	static final String ADD_ARTICLE = "insert article(title,content,userId,name) values(?,?,?,?)";
 	
+	static final String DELETE_ARTICLE2 = "DELETE FROM article WHERE (articleId, userId)=(?,?)";
+	
 	static final String DELETE_ARTICLE = "DELETE FROM article WHERE articleId=?";
 	
-	static final String UPDATE_ARTICLE = "UPDATE article SET title=?, content=? WHERE articleId=?";
+	static final String UPDATE_ARTICLE2 = "UPDATE article SET title=?, content=? WHERE (articleId,userId)=(?,?)";
 
+	static final String UPDATE_ARTICLE = "UPDATE article SET title=?, content=? WHERE articleId=?";
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
@@ -61,11 +64,21 @@ public class ArticleDao {
 				article.getContent(), article.getUserId(), article.getName());
 	}
 	
-	public int updateArticle(Article article) {
+	/**
+	 * 글수정
+	 */
+	public int modifyArticle(Article article) {
 		return jdbcTemplate.update(UPDATE_ARTICLE, article.getTitle(),
-			article.getContent());
+				article.getContent(), article.getArticleId());
 	}
-	public Article deleteArticle(String articleId) {
-		return jdbcTemplate.queryForObject(DELETE_ARTICLE, articleRowMapper, articleId);
+	
+	public int modify2Article( String articleId, String userId) {
+		return jdbcTemplate.update(UPDATE_ARTICLE2, articleId, userId);
+	}
+	/**
+	 * 글삭제
+	 */
+	public int deleteArticle(Article article) {
+		return jdbcTemplate.update(DELETE_ARTICLE, article.getArticleId());
 	}
 }
