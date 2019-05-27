@@ -11,7 +11,7 @@
 	<c:choose>
 		<c:when test="${sessionScope.MEMBER.memberId==article.userId }">
 			<form action="./app/article/modify" method="post">
-	<p>회원이름 : ${MEMBER.name }</p>
+	<p>작성자  이름 : ${MEMBER.name }</p>
 	<p>글번호 : <input type=hidden name="articleId" id="articleId" value=${article.articleId }> ${article.articleId }
 		<p>제목 :</p>
 		<p>

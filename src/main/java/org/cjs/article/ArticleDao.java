@@ -72,9 +72,6 @@ public class ArticleDao {
 				article.getContent(), article.getArticleId());
 	}
 	
-	public int modify2Article( String articleId, String userId) {
-		return jdbcTemplate.update(UPDATE_ARTICLE2, articleId, userId);
-	}
 	/**
 	 * 글삭제
 	 */
