@@ -8,9 +8,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 public class LetterDao {
-	
-	static final String ADD_Letter = "insert letter(title, content, senderId, "
-			+ "senderName, receiverId, receiverName) values('?', '?',?,'?',?,'?')";
+	/**
+	 * 	static final String LIST_LETTERS_OF_SEDER = "select letterId,title,receiverId,receiverName,cdate from letter where senderId=?";
+	static final String LIST_LETTERS_OF_RECEIVER = "select letterId,title,senderId,senderName,cdate from letter where receiverId=?";
+	static final String ADD_LETTER = "insert letter(title,content,senderId,senderName,receiverId,receiverName) values(?,?,?,?,?,?);";
+	static final String GET_LETTER = "select letterId,title,content,senderId,senderName,receiverId,receiverName,cdate from letter where letterId=? and (senderId=? or receiverId=?)";
+	static final String DELETE_LETTER = "delete from letter where letterId=? and (senderId=? or receiverId=?)";
+	 */
+	static final String ADD_Letter = "insert letter(title,content,senderId,senderName,receiverId,receiverName) values(?,?,?,?,?,?);";
 	
 	static final String Reciver_List = "select letterId,title,senderId,senderName,cdate from letter where receiverId=?";
 	
