@@ -71,6 +71,10 @@ public class ArticleDao {
 		return jdbcTemplate.update(UPDATE_ARTICLE, article.getTitle(),
 				article.getContent(), article.getArticleId());
 	}
+	public int modifyArticle2(Article article) {
+		return jdbcTemplate.update(UPDATE_ARTICLE2, article.getTitle(),
+				article.getContent(), article.getArticleId(), article.getUserId());
+	}
 	
 	/**
 	 * 글삭제
@@ -78,4 +82,8 @@ public class ArticleDao {
 	public int deleteArticle(Article article) {
 		return jdbcTemplate.update(DELETE_ARTICLE, article.getArticleId());
 	}
+	public int deleteArticle2(String articleId, String userId) {
+		return jdbcTemplate.update(DELETE_ARTICLE2, articleId, userId);
+	}
+	
 }

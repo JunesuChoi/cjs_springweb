@@ -92,7 +92,7 @@ public class ArticleController {
 		articleDao.modifyArticle(article);
 		JOptionPane.showMessageDialog(null, "수정 완료");
 		return "redirect:/app/article/list";
-	}
+}
 	
 	/**
 	 * 글 삭제
