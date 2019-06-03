@@ -21,8 +21,8 @@
 		<p>
 			<textarea name="content" style="width: 100%; height: 200px;" required></textarea>
 		</p>
-		<input type="text" name="receiverId" id="receiverId" value="${param.receiverId }"/>
-		<input type="text" name="receiverName" id="receiverName" value="${param.receiverName }"/>
+		<input type="text" name="receiverId" id="receiverId" value=${param.receiverId } readonly >
+		<input type="text" name="receiverName" id="receiverName" value=${param.receiverName } readonly >
 		<button type="submit">보내기</button>
 	</form>
 </body>

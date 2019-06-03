@@ -5,6 +5,22 @@
 <head>
 <base href="${pageContext.request.contextPath }/" />
 <title>회원 목록</title>
+<style type="text/css">
+table {
+	margin-top: 10px;
+	border-collapse: collapse;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	width: 100%;
+	text-align: center;
+}
+th, td {
+	padding: 5px 0;
+}
+th {
+	border-bottom: 1px solid gray;
+}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/jsp/header.jsp"%>
@@ -19,16 +35,18 @@
 	<table>
 		<thead>
 			<tr>
-				<td>편지 쓰기 회원번호</td>
-				<td>이메일</td>
-				<td>이름</td>
-				<td>등록일시</td>
+				<th>메일 쓰기</th>
+				<th>회원번호</th>
+				<th>이메일</th>
+				<th>이름</th>
+				<th>등록일시</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="member" items="${members}">
 				<tr>
-					<td><a href="./app/letter/addForm?receiverId=${member.memberId }&receiverName=${member.name}">편지쓰기</a>${member.memberId }</td>
+					<td><a href="./app/letter/addForm?receiverId=${member.memberId }&receiverName=${member.name}">메일 쓰기 </a></td>
+					<td>${member.memberId }</td>
 					<td>${member.email }</td>
 					<td>${member.name }</td>
 					<td>${member.cdate }</td>

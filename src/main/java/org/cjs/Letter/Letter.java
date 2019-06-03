@@ -74,10 +74,19 @@ public class Letter {
 	public void setCdate(String cdate) {
 		this.cdate = cdate;
 	}
-
+	
+	/**
+	 * \n를 <br/> 로 바꾼다.
+	 */
+	public String getContentHtml() {
+		if (content != null)
+			return content.replace("\n", "<br/>");
+		return null;
+	}
+	
 	@Override
 	public String toString() {
-		return "Letter [letterId=" + letterId + ", title=" + title
+		return "\nLetter [letterId=" + letterId + ", title=" + title
 				+ ", content=" + content + ", senderId=" + senderId
 				+ ", senderName=" + senderName + ", receiverId=" + receiverId
 				+ ", receiverName=" + receiverName + ", cdate=" + cdate + "]";

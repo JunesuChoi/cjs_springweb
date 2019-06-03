@@ -14,6 +14,13 @@
 		background-image: url("https://data.whicdn.com/images/293932140/original.gif");
 		background-color: #000000;
 		}
+		 button  {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #ffffff;
+        background-color: rgba( 255, 255, 255, 0.5 );
+      }
 </style>
 <base href="${pageContext.request.contextPath }/" />
 <title>메 - 어서오십시오 -  인</title>
@@ -31,7 +38,10 @@
 		<c:when test="${!empty sessionScope.MEMBER }">
 		<p><font color = "white">memberId: ${MEMBER.memberId }, email: ${MEMBER.email }, name:
 				${MEMBER.name }</font></p>
-	<p><a href="./app/logout"><font size="10em" color ="white">[로그아웃]</font></a></p>
+	<p><span><button onclick="window.location.href='./app/letter/listOfReceiver'">받은 메일함</button></span> | 
+	<a href="./app/logout"><font size="10em" color ="white">[로그아웃]</font></a>
+	<span><button onclick="window.location.href='./app/letter/listOfSender'">보낸 메일함</button></span> |
+	</p>
 		</c:when>
 		<c:otherwise>
 		<p><a href="./app/loginForm"><font size="10em" color ="white">[로그인]</font></a></p>

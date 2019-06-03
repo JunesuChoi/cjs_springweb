@@ -18,9 +18,7 @@ public class RegisterController {
 
 	@Autowired
 	MemberDao memberDao;
-
 	Logger logger = LogManager.getLogger();
-
 	@RequestMapping("/main")
 	public String main() {
 		return "main";
@@ -67,16 +65,12 @@ public class RegisterController {
 	public String members(
 			@RequestParam(value = "page", defaultValue = "1") int page,
 			Model model) {
-
 		// 페이지 당 가져오는 행의 수
 		final int COUNT = 100;
 		// 시작점
 		int offset = (page - 1) * COUNT;
-
 		List<Member> memberList = memberDao.selectAll(offset, COUNT);
-
 		int totalCount = memberDao.countAll();
-
 		model.addAttribute("totalCount", totalCount);
 		model.addAttribute("members", memberList);
 		return "members";

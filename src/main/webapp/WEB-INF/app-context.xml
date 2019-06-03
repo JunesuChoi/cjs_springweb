@@ -23,7 +23,7 @@
 			<mvc:mapping path="/article/add*" />
 			<mvc:mapping path="/article/modify*" />
 			<mvc:mapping path="/article/delete"/>
-			<mvc:mapping path="/letter/add*" />
+			<mvc:mapping path="/letter/**" />
 			<bean class="org.cjs.book.chap13.AuthCheckInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

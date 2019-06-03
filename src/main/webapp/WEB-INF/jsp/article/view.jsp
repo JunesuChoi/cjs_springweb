@@ -4,6 +4,22 @@
 <head>
 <base href="${pageContext.request.contextPath }/" />
 <title>게시판</title>
+<style type="text/css">
+table {
+	margin-top: 10px;
+	border-collapse: collapse;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	width: 100%;
+	text-align: center;
+}
+th, td {
+	padding: 5px 0;
+}
+th {
+	border-bottom: 1px solid gray;
+}
+</style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/jsp/header.jsp"%>

@@ -11,6 +11,7 @@ table {
 	border-top: 1px solid gray;
 	border-bottom: 1px solid gray;
 	width: 100%;
+	text-align: center;
 }
 th, td {
 	padding: 5px 0;
