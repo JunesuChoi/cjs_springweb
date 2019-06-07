@@ -10,7 +10,7 @@
 	<h2>글 수정</h2>
 	<c:choose>
 		<c:when test="${sessionScope.MEMBER.memberId==article.userId }">
-			<form action="./app/article/modify" method="post">
+			<form action="./app/article/s/modify" method="post">
 	<p>작성자  이름 : ${MEMBER.name }</p>
 	<p>글번호 : <input type=hidden name="articleId" id="articleId" value=${article.articleId }> ${article.articleId }
 		<p>제목 :</p>
@@ -31,7 +31,7 @@
 		</c:when>
 		<c:otherwise>
 		<p>수정 권한이 없어 자동으로 리스트로 돌아갑니다.</p>
-		<meta http-equiv='refresh' content='1; url=./list'>
+		<meta http-equiv='refresh' content='1; url=../list'>
 		</c:otherwise>
 	</c:choose>
 </body>

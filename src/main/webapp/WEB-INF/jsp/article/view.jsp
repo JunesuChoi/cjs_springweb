@@ -27,8 +27,8 @@ th {
 	<p>
 		<a href="./app/article/list">글 목록</a> <a href="./app/main">홈 화면</a>
 	</p>
-			<button onclick="window.location.href='./app/article/modifyForm?articleId=${article.articleId}'">글 수정</button>
-			<form action="./app/article/delete?articleId=${article.articleId}" method="post">
+			<button onclick="window.location.href='./app/article/s/modifyForm?articleId=${article.articleId}'">글 수정</button>
+			<form action="./app/article/s/delete?articleId=${article.articleId}" method="post">
 			<button type="submit">삭제</button>
 	</form>
 	<hr />

@@ -54,15 +54,15 @@ public class ArticleController {
 	/**
 	 * 글 등록 화면
 	 */
-	@GetMapping("/article/addForm")
+	@GetMapping("/article/s/addForm")
 	public String articleAddForm(HttpSession session) {
-		return "article/addForm";
+		return "article/s/addForm";
 	}
 
 	/**
 	 * 글 등록
 	 */
-	@PostMapping("/article/add")
+	@PostMapping("/article/s/add")
 	public String articleAdd(Article article,
 			@SessionAttribute("MEMBER") Member member) {
 		article.setUserId(member.getMemberId());
@@ -74,7 +74,7 @@ public class ArticleController {
 	/**
 	 *  글 수정 폼
 	 */
-	@GetMapping("/article/modifyForm")
+	@GetMapping("/article/s/modifyForm")
 	public void articleupdateForm(Article article,HttpSession session,
 			@RequestParam("articleId") String articleId,
 			@SessionAttribute("MEMBER") Member member, Model model) {
@@ -85,7 +85,7 @@ public class ArticleController {
 	/**
 	 *  글 수정 
 	 */
-	@PostMapping("/article/modify")
+	@PostMapping("/article/s/modify")
 	public String articleUpdate(Article article,HttpSession session,
 			@SessionAttribute("MEMBER") Member member) {
 		article.setArticleId(article.articleId);
@@ -97,7 +97,7 @@ public class ArticleController {
 	/**
 	 * 글 삭제
 	 */
-	@PostMapping("/article/delete")
+	@PostMapping("/article/s/delete")
 	public String articledelete(Article article,HttpSession session,
 			@RequestParam("articleId") String articleId,
 			@SessionAttribute("MEMBER") Member member) {
